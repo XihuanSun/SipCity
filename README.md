@@ -126,7 +126,7 @@ sipcity
 
 Clone the repository
 
-git clone https://github.com//sipcity
+git clone https://github.com/XihuanSun/sipcity
 
 Install dependencies
 
