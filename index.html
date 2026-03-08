@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SipCity - Pixel UI</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=VT323&family=Pixelify+Sans:wght@400..700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="desktop-background">
+    <div class="phone-frame">
+      <div class="phone-notch"></div>
+      <div class="app-container" id="app">
+        <!-- Header -->
+        <header class="app-header">
+          <div class="logo-box">SC</div>
+          <div class="header-text">
+            <h1>SipCity</h1>
+            <p>NYC cocktail match MVP</p>
+          </div>
+        </header>
+
+        <!-- Navigation Tabs Content -->
+        <main class="content-area" id="main-content">
+          <!-- Scan Page (Capture & Taste) -->
+          <section id="scan-page" class="page active">
+            <div class="section-header">
+              <h2>Analyze Drink</h2>
+            </div>
+
+            <!-- Step 1: Capture -->
+            <div class="pixel-card">
+              <p class="label">1. Capture Image</p>
+              <div id="image-preview" class="image-preview-pixel">
+                <div class="empty-preview">No image selected</div>
+              </div>
+              <div id="loading-bar-container" class="pixel-progress-container" style="display: none;">
+                <div id="loading-bar-fill" class="pixel-progress-fill"></div>
+              </div>
+              <div id="image-path" class="path-text"></div>
+              <button id="pick-image-btn" class="pixel-btn full-width">Take / Pick Photo</button>
+            </div>
+
+            <!-- Step 2: Taste Cues -->
+            <div class="pixel-card mt-20">
+              <p class="label">2. Add Taste Cues</p>
+              <div id="flavor-tags" class="tag-wrap"></div>
+              <button id="analyze-btn" class="pixel-btn full-width mt-10">Analyze My Drink</button>
+            </div>
+
+            <!-- Results Area (Matches) -->
+            <div id="result-panel" class="result-panel-pixel mt-20"></div>
+          </section>
+
+          <!-- My Drinks Page -->
+          <section id="my-drinks" class="page">
+            <div class="section-header">
+              <h2>My Library</h2>
+            </div>
+            <div id="my-drinks-list" class="pixel-list"></div>
+          </section>
+
+          <!-- Homebar Page -->
+          <section id="homebar" class="page">
+            <div class="section-header">
+              <h2>Homebar</h2>
+            </div>
+            <div class="pixel-card">
+              <p class="label">Update bottles</p>
+              <textarea id="homebar-bottles" rows="4" class="pixel-input" placeholder="Gin, Lime, Syrup..."></textarea>
+              <button id="save-homebar-btn" class="pixel-btn mt-10">Save Homebar</button>
+            </div>
+            <div id="homebar-results" class="pixel-list mt-20"></div>
+          </section>
+        </main>
+
+        <!-- Footer Navigation -->
+        <nav class="bottom-nav">
+          <button class="nav-item active" data-tab-target="scan">
+            <span class="label">Scan</span>
+            <div class="underline"></div>
+          </button>
+          <button class="nav-item" data-tab-target="mydrinks">
+            <span class="label">My Drinks</span>
+          </button>
+          <button class="nav-item" data-tab-target="homebar">
+            <span class="label">Homebar</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <!-- Model Status overlay -->
+  <div id="model-status-text" class="pixel-status-toast"></div>
+  <script src="renderer.js"></script>
+</body>
+
+</html>

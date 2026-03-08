@@ -1,0 +1,396 @@
+:root {
+  --bg-color: #4a4538;
+  --phone-bg: #ece3b3;
+  --text-primary: #121212;
+  --border-color: #121212;
+  --accent-red: #da3e33;
+  --font-pixel: 'VT323', monospace;
+  --font-sans-pixel: 'Pixelify Sans', sans-serif;
+  --border-width: 3px;
+  --shadow: 12px 12px 0px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  font-family: var(--font-pixel);
+  color: var(--text-primary);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.desktop-background {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Phone Frame */
+.phone-frame {
+  width: 400px;
+  height: 820px;
+  background-color: var(--phone-bg);
+  border: 8px solid #121212;
+  border-radius: 40px;
+  position: relative;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.phone-notch {
+  width: 150px;
+  height: 30px;
+  background-color: #121212;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px 20px;
+  overflow: hidden;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.logo-box {
+  width: 45px;
+  height: 45px;
+  background-color: #121212;
+  color: var(--phone-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.header-text h1 {
+  font-family: var(--font-sans-pixel);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.header-text p {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Content Area */
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+.content-area::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+}
+
+/* Pixel Card System */
+.pixel-card {
+  border: 2px solid var(--border-color);
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.03);
+  position: relative;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.05);
+}
+
+.label {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-10 {
+  margin-top: 10px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+/* Image Preview Pixel Style */
+.image-preview-pixel {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 2px dashed #999;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.image-preview-pixel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.empty-preview {
+  color: #666;
+  font-style: italic;
+}
+
+.path-text {
+  font-size: 0.7rem;
+  color: #666;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Taste Tags */
+.tag-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-chip {
+  padding: 6px 12px;
+  border: 2px solid var(--border-color);
+  background-color: transparent;
+  font-family: var(--font-pixel);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.tag-chip[data-active="true"] {
+  background-color: var(--border-color);
+  color: var(--phone-bg);
+}
+
+/* Progress Bar */
+.pixel-progress-container {
+  width: 100%;
+  height: 12px;
+  border: 2px solid var(--border-color);
+  margin-bottom: 15px;
+  background: #fff;
+}
+
+.pixel-progress-fill {
+  height: 100%;
+  background-color: var(--accent-red);
+  width: 0%;
+  transition: width 0.3s;
+}
+
+/* Result Panel (Recommendation Cards) */
+.result-panel-pixel h3 {
+  font-family: var(--font-sans-pixel);
+  margin-bottom: 15px;
+}
+
+.cocktail-card {
+  border: 2px solid var(--border-color);
+  padding: 15px;
+  margin-bottom: 15px;
+  background: #fff;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
+.cocktail-card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+}
+
+.card-meta {
+  font-size: 0.9rem;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.inline-tag {
+  display: inline-block;
+  padding: 2px 6px;
+  background: #eee;
+  font-size: 0.8rem;
+  margin: 2px;
+  border: 1px solid #ccc;
+}
+
+.inline-tag.active {
+  background: var(--accent-red);
+  color: #fff;
+  border-color: var(--accent-red);
+}
+
+/* Recipe Screen (Special Styles) */
+.recipe-card {
+  border: 3px solid var(--border-color);
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.4s ease-out;
+}
+
+.recipe-card h4 {
+  font-family: var(--font-sans-pixel);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.ingredient-list,
+.step-list {
+  margin: 10px 0 20px 20px;
+}
+
+.ingredient-list li {
+  list-style-type: '• ';
+  margin-bottom: 5px;
+}
+
+.step-list li {
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* Buttons */
+.pixel-btn {
+  background-color: var(--border-color);
+  color: var(--phone-bg);
+  border: none;
+  padding: 10px 20px;
+  font-family: var(--font-pixel);
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+  transition: all 0.1s;
+}
+
+.pixel-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+}
+
+.pixel-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.ghost-btn {
+  background: transparent;
+  border: 2px solid var(--border-color);
+  padding: 8px 16px;
+  font-family: var(--font-pixel);
+  cursor: pointer;
+}
+
+/* Input Fields */
+.pixel-input {
+  width: 100%;
+  border: 2px solid var(--border-color);
+  padding: 10px;
+  font-family: var(--font-pixel);
+  font-size: 1.1rem;
+}
+
+/* Bottom Nav */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
+  border-top: 2px solid var(--border-color);
+  background-color: var(--phone-bg);
+}
+
+.nav-item {
+  background: none;
+  border: none;
+  font-family: var(--font-pixel);
+  font-size: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  padding: 5px 0;
+}
+
+.nav-item.active {
+  font-weight: bold;
+}
+
+.nav-item .underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--border-color);
+}
+
+/* Status Toast */
+.pixel-status-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--border-color);
+  color: var(--phone-bg);
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+  animation: fadeIn 0.3s;
+}
