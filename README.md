@@ -19,7 +19,7 @@ SipCity helps users identify and explore cocktails from a single drink photo. By
 
 ## Product Demo (Screen Recording)
 
-
+[(https://drive.google.com/file/d/1LdOVhUK4bUPoiJJszte1W3igeoR3d7m6/view?usp=sharing)](https://drive.google.com/file/d/1LdOVhUK4bUPoiJJszte1W3igeoR3d7m6/view?usp=sharing)
 
 ---
 
